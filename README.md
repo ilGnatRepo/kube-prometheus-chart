@@ -40,7 +40,7 @@ sed -n '/dependencies/,$p' Chart.yaml | grep -v condition
 """
 ```
 
-_Find the relation charts in the prometheus-community repo in github, and copy the charts to `kube-prometheus-stack/charts/` dictionary.
+_Find the relation charts in the prometheus-community repo in github, and copy the charts to `kube-prometheus-stack/charts/` dictionary._
 
 ## Collect the Docker image Info, find the image and build\push to local registry
 
@@ -62,7 +62,6 @@ cat values.yaml | grep -E '(registry:|repository:|tag:)'
 
 ```console
 helm package kube-prometheus-stack
-helm install [RELEASE_NAME] prometheus-community/kube-prometheus-stack
 helm install kube-prometheus kube-prometheus-stack-{tag}.tgz --namespace monitoring --create-namespace --values values.yaml
 ```
 
